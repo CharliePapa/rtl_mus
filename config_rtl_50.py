@@ -18,18 +18,18 @@ along with RTL Multi-User Server.  If not, see <http://www.gnu.org/licenses/>.
 '''
 
 my_ip=''	# all interfaces
-my_listening_port = 7373
+my_listening_port = 1050
 
 #send_first=chr(9)+chr(0)+chr(0)+chr(0)+chr(1) # set direct sampling
 send_first=""
-rtl_tcp_host = 'localhost'
-rtl_tcp_port = 1234
+rtl_tcp_host = 'sdrpi'
+rtl_tcp_port = 50
 
 setuid_on_start = 0						# we normally start with root privileges and setuid() to another user
-uid = 999 									# determine by issuing: $ id -u username
-ignore_clients_without_commands = 1 # we won't serve data to telnet sessions and things like that
+uid = 1000 									# determine by issuing: $ id -u username
+ignore_clients_without_commands = 0 # we won't serve data to telnet sessions and things like that
 												# we'll start to serve data after getting the first valid command 
-freq_allowed_ranges = [[0000000,2200000000]]
+freq_allowed_ranges = [[50200000,50200000]]
 # Allow from all: freq_allowed_ranges = [[24000000,2200000000]]
 
 client_cant_set_until=0		
